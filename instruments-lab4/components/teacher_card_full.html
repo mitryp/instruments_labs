@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Картка викладача</title>
+</head>
+<body>
+<!--Створити html файл з компонентом «повна версія картки
+викладача» з полями: Повне ім’я, стать, вік, email, телефон, країна, місто,
+коментар та карта. Додати до компонента data-attribute з кольором фону.
+Виконуючи завдання використовувати відповідні семантичні теги.-->
+
+<article class="teacher_card teacher_card_full" data-preferred-bg="#ff9e16">
+    <header><h2>Викладач</h2></header>
+
+    <img class="profile_picture" src="https://thispersondoesnotexist.com/image" alt="Фотографія викладача"
+         width="300">
+
+    <div class="general">
+        <div class="general__info">
+            <header class="info__header"><h3>Інформація</h3></header>
+
+            <p class="full_name">Повне ім'я</p>
+            <p class="sex">Стать</p>
+            <p class="age">Вік</p>
+        </div>
+
+        <p class="comment">Коментар викладача</p>
+    </div>
+
+    <div class="location">
+        <header><h3>Розташування</h3></header>
+        <p class="place"></p>
+        <iframe class="embedded_map"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2540.1916277046616!2d30.524878015094966!3d50.456156194835756!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4ce4f6f9f69f9%3A0x220fd187954af85!2z0J_QsNC8J9GP0YLQvdC40Log0JLQvtC70L7QtNC40LzQuNGA0YMg0JLQtdC70LjQutC-0LzRgw!5e0!3m2!1suk!2suk!4v1666400056038!5m2!1suk!2suk"
+                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+    </div>
+
+    <div class="contacts">
+        <header><h3>Контакти</h3></header>
+
+        <a class="teacher_email" href="mailto:teacher@example.com">Електронна пошта</a>
+        <a class="teacher_phone" href="tel:380123456789">Телефон</a>
+    </div>
+
+</article>
+
+
+</body>
+</html>

@@ -1,0 +1,62 @@
+@import "mixins";
+
+.main_navigation() {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.2em;
+  color: @accent-color;
+  font-weight: bold;
+  .transition(@prop: color);
+
+  > ul {
+    .horizontal_list(1em);
+
+    > li > a {
+      .normalized_link();
+
+      &:hover {
+
+      }
+    }
+  }
+
+  > .add_teacher_button {
+    .rectangle_button();
+    font-weight: bold;
+  }
+
+  @media screen and (max-width: 768px) {
+    &, > ul {
+      flex-direction: column;
+    }
+
+    > ul {
+      margin-bottom: 1em;
+
+      > li {
+        position: relative;
+
+        &:after {
+          position: absolute;
+          content: '';
+          width: 10em;
+          height: 1px;
+          background-color: #0002;
+          bottom: -50%;
+          left: -50%;
+        }
+
+        &:last-child:after {
+          display: none;
+        }
+      }
+    }
+
+    > .add_teacher_button {
+      margin: auto;
+      width: 70%;
+    }
+
+  }
+}

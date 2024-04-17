@@ -1,0 +1,62 @@
+@import "constants";
+
+.teacher_info_popup {
+  font-size: .9em;
+
+  .upper_content_row {
+    display: flex;
+    column-gap: 1em;
+
+    img {
+      width: 40%;
+      aspect-ratio: 1;
+    }
+
+    > .teacher_summary {
+      display: flex;
+      flex-direction: column;
+
+      h2.teacher_name {
+        margin-top: .3em;
+        font-weight: normal;
+      }
+
+      > p {
+        margin: .3em 0;
+
+        &:first-of-type {
+          margin-bottom: 1em;
+          font-weight: bolder;
+        }
+
+        a {
+          text-decoration: none;
+          color: @minor-accent-color;
+
+          &[href*=tel] {
+            color: currentColor;
+          }
+        }
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      flex-direction: column;
+      align-items: center;
+
+      img {
+        width: 55%;
+      }
+    }
+  }
+
+  details.toggle_teacher_map summary {
+    color: @minor-accent-color;
+    transform: translateX(-15px);
+    margin-bottom: .3em;
+
+    &::marker {
+      color: transparent;
+    }
+  }
+}

@@ -1,0 +1,42 @@
+@import "constants";
+@import "mixins";
+
+.zero-spaces() {
+  margin: 0;
+  margin-inline: 0;
+  padding: 0;
+}
+
+.horizontal_list(@gap: 0) {
+  .zero-spaces();
+  display: flex;
+  align-items: center;
+  gap: @gap;
+  list-style: none;
+}
+
+.rectangle_button(@fz: .8em) {
+  border-radius: 0;
+  padding: calc(@fz * .7);
+  font-size: @fz;
+  border: 1px solid @accent-color;
+  background-color: unset;
+  color: @accent-color;
+
+  .transition(@duration: calc(@default-transition-duration / 2), @prop: color);
+  transition-property: background-color, color;
+
+  &:hover {
+    background-color: @accent-color;
+    color: #fff;
+  }
+}
+
+.normalized_link() {
+  color: inherit;
+  text-decoration: none;
+}
+
+.transition(@duration: @default-transition-duration, @timing-function: @default-transition-function, @prop: unset) {
+  transition: @duration @timing-function @prop;
+}

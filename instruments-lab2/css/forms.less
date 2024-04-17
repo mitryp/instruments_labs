@@ -1,0 +1,49 @@
+@import "mixins";
+
+.new_teacher_form {
+  color: #464646;
+
+  label, .radio_button_group {
+    margin: .3em 0;
+
+    &:has(input[type=color]) {
+      > input[type=color] {
+        width: 3em !important;
+      }
+
+      float: left;
+    }
+  }
+
+  input, select, textarea {
+    margin-top: .2em;
+  }
+
+  > .form_fields_blocks {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    > label {
+      width: 48% !important;
+    }
+  }
+
+  > .radio_button_group {
+    width: fit-content !important;
+    display: flex;
+    align-items: center;
+
+    > span {
+      padding-right: 2em;
+    }
+  }
+
+  .add_teacher_button {
+    .rectangle_button();
+    font-size: 1.1em;
+    font-weight: bolder;
+    color: #f56652;
+    margin-top: 1em;
+  }
+}

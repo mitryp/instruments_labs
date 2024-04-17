@@ -1,0 +1,29 @@
+.new_teacher_form label {
+  padding: 0.3em 0;
+}
+.new_teacher_form label:has(input[type=color]) {
+  float: left;
+}
+.new_teacher_form label:has(input[type=color]) > input {
+  width: 3em;
+}
+.new_teacher_form > .form_fields_blocks {
+  display: flex;
+  flex-wrap: wrap;
+}
+.new_teacher_form > .form_fields_blocks > * {
+  width: 50%;
+}
+.new_teacher_form > .form_fields_blocks label {
+  padding: 0.3em;
+}
+.new_teacher_form > .radio_button_group {
+  padding: 0.3em 0;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+}
+.new_teacher_form > .radio_button_group > span {
+  padding-right: 2em;
+}
+/*# sourceMappingURL=forms.css.map */

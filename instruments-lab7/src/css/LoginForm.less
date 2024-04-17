@@ -1,0 +1,55 @@
+@import "shared";
+
+body:has(.login_form) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  #root {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.login_form {
+  display: flex;
+  flex-direction: column;
+  row-gap: .5rem;
+  font-size: 1.2rem;
+
+  padding: 1em;
+  border: 1px solid #3334;
+  border-radius: .5em;
+
+  > input, button {
+    padding: .8em;
+    border-radius: .4em;
+    border: none;
+    outline: none;
+  }
+
+  > input {
+    background-color: #00004409;
+    box-shadow: none;
+    transition: .3s ease box-shadow;
+
+    &:focus {
+      box-shadow: 0 1px 0 #00f6;
+    }
+  }
+
+  > button {
+    margin: .5rem 0;
+  }
+
+  p.error_message {
+    font-size: .8em;
+    text-align: center;
+    margin: 0;
+
+    color: #d00;
+    font-weight: 600;
+  }
+}

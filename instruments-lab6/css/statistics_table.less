@@ -1,0 +1,87 @@
+@import "constants";
+@import "mixins";
+
+.statistics_table() {
+  width: 100%;
+  margin: auto;
+  border-collapse: collapse;
+
+  tr, td, th {
+    padding: .5em .3em;
+    text-align: center;
+  }
+
+  td:first-of-type {
+    text-align: left;
+  }
+
+  th {
+    border-bottom: 1px solid #000;
+    position: relative;
+    width: 20%;
+
+    &:hover {
+      background-color: #0001;
+    }
+
+    &.sorting_by {
+      &:before, &:after {
+        position: absolute;
+      }
+
+      &:before {
+        color: @minor-accent-color;
+        font-size: 1em;
+        right: .5em;
+        bottom: .5em;
+      }
+
+      &:after {
+        content: '';
+        width: 100%;
+        height: 2px;
+        background-color: #000;
+        bottom: 0;
+        left: 0;
+      }
+
+      &.ascending:before {
+        content: '↓';
+      }
+
+      &.descending:before {
+        content: '↑';
+      }
+    }
+  }
+
+  :where(tr, th):first-of-type {
+    padding-right: 5em;
+  }
+
+  tr:nth-child(2n+3) {
+    background-color: @table-secondary-background;
+  }
+
+  @media screen and (max-width: 540px) {
+    display: inline-block;
+    overflow-x: auto;
+  }
+}
+
+.statistics_table_controls {
+  .horizontal_list(.8em);
+  padding: 1em 0;
+
+  > li {
+    color: @minor-accent-color;
+
+    > a {
+      .normalized_link();
+
+      &:not(.curr_page) {
+        font-size: 1.5em;
+      }
+    }
+  }
+}

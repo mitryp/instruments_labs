@@ -1,0 +1,127 @@
+@import "constants";
+
+.teacher_info_popup {
+  font-size: .9em;
+
+  .popup_inner_content {
+    width: 100%;
+    padding: 1em !important;
+  }
+
+  .upper_content_row {
+    display: flex;
+    column-gap: 1em;
+
+    img {
+      width: 100%;
+      max-width: 35vh;
+      object-fit: contain;
+      aspect-ratio: 1!important;
+    }
+
+    > .teacher_summary {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+
+      > .name_row {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        text-align: center;
+
+        > h2.teacher_name {
+          margin: .5em 0;
+          font-weight: normal;
+        }
+
+        > span.fav_star {
+          cursor: pointer;
+          color: #ffff00;
+          font-size: 2em;
+          text-shadow: 0 0 3px black;
+          margin-right: .5em;
+
+          &.marked {
+            color: #ffff00;
+            text-shadow: 0 0 2px black, 0 0 2px black, 0 0 2px black, 0 0 2px black, 0 0 2px black;
+          }
+        }
+
+        @media screen and (max-width: 768px) {
+          justify-content: center;
+
+          > span.fav_star {
+            margin: 0 0 0 .5em
+          }
+        }
+      }
+
+      > p {
+        margin: .3em 0;
+
+        &:first-of-type {
+          margin-bottom: 1em;
+          font-weight: bolder;
+        }
+
+        a {
+          font-size: .8em;
+          word-break: break-word;
+          text-decoration: none;
+          color: @minor-accent-color;
+
+          &[href*=tel] {
+            color: currentColor;
+          }
+
+          @media screen and (max-width: 768px) {
+            font-size: inherit;
+          }
+        }
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  details.toggle_teacher_map {
+    summary {
+      color: @minor-accent-color;
+      transform: translateX(-15px);
+      margin-bottom: .3em;
+      cursor: pointer;
+
+      &::marker {
+        color: transparent;
+      }
+    }
+
+    .embedded_map {
+      width: 100%;
+      height: 250px;
+
+      @media screen and (max-width: 768px) {
+        position: absolute;
+
+        @iframe_width: 90vw;
+        @iframe_height: 60vh;
+        width: @iframe_width;
+        height: @iframe_height;
+        top: calc(50% - @iframe_height / 2);
+        right: calc(50% - @iframe_width / 2);
+
+        border: 3px solid #444;
+      }
+    }
+  }
+}

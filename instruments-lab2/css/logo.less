@@ -1,0 +1,14 @@
+@import "mixins";
+
+.text_logo() {
+  color: #fff;
+  text-shadow: -1px -1px 0 @accent-color, 1px 1px 0 #000;
+  font-weight: bold;
+  font-family: "Bodoni MT", serif;
+  font-size: 3em;
+  .transition(@prop: text-shadow);
+
+  &:hover {
+    text-shadow: -2px -2px 1px @accent-color, 2px 2px 1px #000;
+  }
+}

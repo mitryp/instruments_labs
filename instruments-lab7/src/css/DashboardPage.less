@@ -1,0 +1,94 @@
+@import "shared";
+
+#root {
+  min-height: 80%;
+}
+
+body {
+  .gradient_background();
+}
+
+header {
+  width: 100vw;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 1rem 0;
+  background: #fff6;
+  border-bottom: 1px solid #cccc;
+
+  > h1 {
+    margin: 0;
+  }
+
+  > a {
+    color: currentColor;
+    text-decoration: none;
+    font-size: larger;
+  }
+
+  @media screen and (max-width: 768px) {
+    h1 {
+      font-size: 1.5em;
+    }
+  }
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: .5rem 15% 1rem;
+
+  main {
+    width: 100%;
+    > h2 {
+      margin: 0 0 1rem 1rem;
+
+      @media screen and (max-width: 768px) {
+        margin: 0 0 1rem 0;
+        text-align: center;
+      }
+    }
+  }
+
+  &:not(:has(.date_card)) {
+    > main {
+      display: none;
+    }
+
+    &::before {
+      @dim: 100px;
+
+      position: absolute;
+      top: calc(50% - @dim / 2);
+      left: calc(50% - @dim / 2);
+
+      content: '';
+      display: block;
+      width: @dim;
+      height: @dim;
+
+      border-top: 10px solid @accent_color;
+      border-radius: 50%;
+
+      animation: loading_rotation .3s infinite ease-in-out;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    padding: 1rem;
+    .gradient_background();
+  }
+}
+
+@keyframes loading_rotation {
+  from {
+    rotate: 0deg;
+  }
+
+  to {
+    rotate: 360deg;
+  }
+}

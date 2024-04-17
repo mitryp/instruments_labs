@@ -1,0 +1,19 @@
+{
+  "teachers": [
+    {
+      "id": "1607049057",
+      "gender": "male",
+      "full_name": "Dmytro Popov",
+      "city": "Kyiv",
+      "country": "Ukraine",
+      "email": "thedmitryp@ukr.net",
+      "b_date": "2004-01-20T00:00:00.000Z",
+      "age": 18,
+      "phone": "04784568734",
+      "favorite": false,
+      "bg_color": "#d943db",
+      "course": "Computer Science",
+      "note": ""
+    }
+  ]
+}

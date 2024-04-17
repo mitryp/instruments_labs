@@ -1,0 +1,46 @@
+body:has(.login_form) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body:has(.login_form) #root {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.login_form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.5rem;
+  font-size: 1.2rem;
+  padding: 1em;
+  border: 1px solid #3334;
+  border-radius: 0.5em;
+}
+.login_form > input,
+.login_form button {
+  padding: 0.8em;
+  border-radius: 0.4em;
+  border: none;
+  outline: none;
+}
+.login_form > input {
+  background-color: #00004409;
+  box-shadow: none;
+  transition: 0.3s ease box-shadow;
+}
+.login_form > input:focus {
+  box-shadow: 0 1px 0 #00f6;
+}
+.login_form > button {
+  margin: 0.5rem 0;
+}
+.login_form p.error_message {
+  font-size: 0.8em;
+  text-align: center;
+  margin: 0;
+  color: #d00;
+  font-weight: 600;
+}
+/*# sourceMappingURL=LoginForm.css.map */

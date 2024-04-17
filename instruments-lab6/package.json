@@ -1,0 +1,23 @@
+{
+  "name": "lab5",
+  "version": "1.0.0",
+  "devDependencies": {
+    "@types/chart.js": "latest",
+    "@types/leaflet": "latest",
+    "@types/lodash": "latest",
+    "json-server": "latest",
+    "ts-loader": "^9.4.2",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1"
+  },
+  "dependencies": {
+    "chart.js": "^4.1.1",
+    "dayjs": "^1.11.7",
+    "leaflet": "^1.9.3",
+    "lodash": "^4.17.21"
+  },
+  "scripts": {
+    "dev": "webpack --mode development",
+    "prod": "webpack --mode production"
+  }
+}

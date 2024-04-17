@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Додати викладача</title>
+</head>
+<body>
+<!--Форма повинна містити наступні поля: Повне ім’я, стать, дата народження, email,
+телефон, бажаний колір фону, країна, місто, коментар.-->
+
+<form action="/" id="new_teacher_form" class="new_teacher_form">
+    <fieldset name="general_info">
+        <legend>Загальна інформація</legend>
+        <label>
+            Повне ім'я
+            <input type="text" name="full_name" required>
+        </label>
+
+        <fieldset name="sex_selection">
+            <legend>Стать</legend>
+
+            <input type="radio" name="sex" id="sex_selector_male" value="male">
+            <label for="sex_selector_male">Чоловіча</label>
+            <input type="radio" name="sex" id="sex_selector_female" value="female">
+            <label for="sex_selector_female">Жіноча</label>
+        </fieldset>
+
+        <label>
+            Дата народження
+            <input type="date" name="date_of_birth" required>
+        </label>
+
+        <br>
+
+        <label>
+            Країна
+            <input type="text" name="country" required>
+        </label>
+
+        <br>
+
+        <label>
+            Місто
+            <input type="text" name="city" required>
+        </label>
+    </fieldset>
+
+    <fieldset name="contacts">
+        <legend>Контактна інформація</legend>
+
+        <label>
+            Електронна пошта
+            <input type="email" name="email" required>
+        </label>
+
+        <br>
+
+        <label>
+            Телефон
+            <input type="tel" name="phone">
+        </label>
+    </fieldset>
+
+    <fieldset name="preferences">
+        <legend>Уподобання</legend>
+
+        <label>
+            Бажаний колір фону профіля
+            <input type="color" name="preferred_bg_color">
+        </label>
+
+        <br>
+
+        <label>
+            Коментар
+            <input type="text" name="comment">
+        </label>
+    </fieldset>
+
+    <input type="submit" value="Створити профіль">
+</form>
+
+
+</body>
+</html>

@@ -1,0 +1,77 @@
+#root {
+  min-height: 80%;
+}
+body {
+  background: linear-gradient(14deg, #f7cabe -10%, #fef7f5, #fdefec);
+}
+header {
+  width: 100vw;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 1rem 0;
+  background: #fff6;
+  border-bottom: 1px solid #cccc;
+}
+header > h1 {
+  margin: 0;
+}
+header > a {
+  color: currentColor;
+  text-decoration: none;
+  font-size: larger;
+}
+@media screen and (max-width: 768px) {
+  header h1 {
+    font-size: 1.5em;
+  }
+}
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem 15% 1rem;
+}
+.container main {
+  width: 100%;
+}
+.container main > h2 {
+  margin: 0 0 1rem 1rem;
+}
+@media screen and (max-width: 768px) {
+  .container main > h2 {
+    margin: 0 0 1rem 0;
+    text-align: center;
+  }
+}
+.container:not(:has(.date_card)) > main {
+  display: none;
+}
+.container:not(:has(.date_card))::before {
+  position: absolute;
+  top: calc(50% - 100px / 2);
+  left: calc(50% - 100px / 2);
+  content: '';
+  display: block;
+  width: 100px;
+  height: 100px;
+  border-top: 10px solid #ea6e4c;
+  border-radius: 50%;
+  animation: loading_rotation 0.3s infinite ease-in-out;
+}
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 1rem;
+    background: linear-gradient(14deg, #f7cabe -10%, #fef7f5, #fdefec);
+  }
+}
+@keyframes loading_rotation {
+  from {
+    rotate: 0deg;
+  }
+  to {
+    rotate: 360deg;
+  }
+}
+/*# sourceMappingURL=DashboardPage.css.map */

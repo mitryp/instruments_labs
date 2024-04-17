@@ -1,0 +1,44 @@
+.scroll_gallery_wrapper {
+  width: 100%;
+  height: min-content;
+  position: relative;
+
+  > .scroll_gallery {
+    width: 85%;
+    display: flex;
+    overflow-x: hidden;
+    margin: 0 auto;
+
+    .scroll_gallery_item {
+      min-width: 20%;
+
+      @media screen and (max-width: 1000px) {
+        min-width: 25%;
+      }
+
+      @media screen and (max-width: 768px) {
+        min-width: auto;
+      }
+    }
+  }
+
+  .scroll_gallery_control {
+    position: absolute;
+    font-weight: 900;
+    font-size: 5em;
+    top: calc(50% - .5em);
+    color: #888888;
+
+    &.control_left {
+      left: 0;
+    }
+
+    &.control_right {
+      right: 0;
+    }
+
+    &:hover {
+      color: #000;
+    }
+  }
+}

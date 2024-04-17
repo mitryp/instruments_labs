@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--
+Можеш записати в OBS відосик, де показуєш, як працює лаба, проходишся по завданням лаби і відповідаєш на теор питання.
+Теорія не вся, для другої лаби хай будуть ці питання
+1) Що таке псевдокласи і псевдоелементи, в чому різниця і де використовував(якщо використовував)
+2) Що таке семантичні теги і для чого вони. В чому різниця між тегами фізичного та семантичного (якщо не помиляюсь) форматування тексту
+-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Teachinder</title>
+
+    <link rel="stylesheet" href="css/default.css">
+</head>
+<body>
+<div class="wrapper">
+    <header class="main_header">
+        <div class="top_row">
+            <h1 class="logo">Teachinder</h1>
+            <form class="search_form" action="/" id="search">
+                <label for="search_field"></label>
+                <input type="search" class="search_field" id="search_field"
+                       placeholder="Name, note, or age">
+                <input type="submit" value="Search" class="search_button">
+            </form>
+        </div>
+
+        <nav class="main_nav">
+            <ul>
+                <li><a href="#teachers">Teachers</a></li>
+                <li><a href="#statistics">Statistics</a></li>
+                <li><a href="#favourites">Favorites</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+
+            <button class="add_teacher_button" type="button">Add teacher</button>
+        </nav>
+    </header>
+
+    <hr>
+
+    <section id="teachers" class="top_teachers">
+        <header class="section_header">
+            <h2>Top Teachers</h2>
+        </header>
+
+        <ul class="filters">
+            <li class="filter">
+                <label for="age_selector">Age</label>
+                <select id="age_selector">
+                    <option value="age_18_31">18-31</option>
+                    <option value="age_32_45">32-45</option>
+                    <option value="age_46_64">46-64</option>
+                    <option value="age_65">65 and older</option>
+                </select>
+            </li>
+            <li class="filter">
+                <label for="region_selector">Region</label>
+                <select id="region_selector">
+                    <option value="eu">Europe</option>
+                    <option value="na">North America</option>
+                    <option value="na">South and Central America</option>
+                    <option value="as">Asia</option>
+                    <option value="af">Africa</option>
+                    <option value="oc">Australia and Oceania</option>
+                </select>
+            </li>
+            <li class="filter">
+                <label for="sex_selector">Sex</label>
+                <select id="sex_selector">
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+            </li>
+            <li class="filter">
+                <label>
+                    <input type="checkbox" name="with_photos">
+                    <span>With photos</span>
+                </label>
+            </li>
+            <li class="filter">
+                <label>
+                    <input type="checkbox" name="only_favorites">
+                    Only favorites
+                </label>
+            </li>
+        </ul>
+
+        <div class="teachers">
+            <article class="teacher_card">
+                <div class="teacher_photo_container">
+                    <img loading="lazy"
+                         src="https://thispersondoesnotexist.com/image"
+                         alt="Teacher photo"
+                         class="profile_picture">
+                </div>
+                <p class="teacher_name">Ihor Tkachuk</p>
+                <p class="specialization">Chemistry</p>
+                <p class="country">Ukraine</p>
+            </article>
+            <article class="teacher_card">
+                <div class="teacher_photo_container">
+                    <img loading="lazy" src="https://thispersondoesnotexist.com/image"
+                         alt="Teacher photo"
+                         class="profile_picture">
+                </div>
+                <p class="teacher_name">Pragg Rameshababu</p>
+                <p class="specialization">Chess</p>
+                <p class="country">India</p>
+            </article>
+            <article class="teacher_card">
+                <div class="teacher_photo_container">
+                    <img loading="lazy" src="https://thispersondoesnotexist.com/image"
+                         alt="Teacher photo"
+                         class="profile_picture">
+                </div>
+                <p class="teacher_name">Floor Jansen</p>
+                <p class="specialization">Vocal</p>
+                <p class="country">Denmark</p>
+            </article>
+            <article class="teacher_card">
+                <div class="teacher_photo_container">
+                    <img loading="lazy" src="https://thispersondoesnotexist.com/image"
+                         alt="Teacher photo"
+                         class="profile_picture">
+                </div>
+                <p class="teacher_name">John Burke</p>
+                <p class="specialization">Computer Science</p>
+                <p class="country">Belgium</p>
+            </article>
+            <article class="teacher_card">
+                <div class="teacher_photo_container">
+                    <img loading="lazy" src="https://thispersondoesnotexist.com/image"
+                         alt="Teacher photo"
+                         class="profile_picture">
+                </div>
+                <p class="teacher_name">Ari Tang</p>
+                <p class="specialization">Biology</p>
+                <p class="country">China</p>
+            </article>
+            <article class="teacher_card">
+                <div class="teacher_photo_container">
+                    <img loading="lazy" src="https://thispersondoesnotexist.com/image"
+                         alt="Teacher photo"
+                         class="profile_picture">
+                </div>
+                <p class="teacher_name">Rachel Andrew</p>
+                <p class="specialization">Medicine</p>
+                <p class="country">UK</p>
+            </article>
+            <article class="teacher_card">
+                <div class="teacher_photo_container">
+                    <img loading="lazy" src="https://thispersondoesnotexist.com/image"
+                         alt="Teacher photo"
+                         class="profile_picture">
+                </div>
+                <p class="teacher_name">Anna Muzychuk</p>
+                <p class="specialization">Chess</p>
+                <p class="country">Belarus</p>
+            </article>
+            <article class="teacher_card">
+                <div class="teacher_photo_container">
+                    <img loading="lazy" src="https://thispersondoesnotexist.com/image"
+                         alt="Teacher photo"
+                         class="profile_picture">
+                </div>
+                <p class="teacher_name">Radoslaw Ljuboevic</p>
+                <p class="specialization">Physics</p>
+                <p class="country">Poland</p>
+            </article>
+        </div>
+    </section>
+
+    <hr>
+
+    <section id="statistics" class="teacher_statistics">
+        <header class="section_header">
+            <h2>Statistics</h2>
+        </header>
+
+        <table class="statistics">
+            <tr>
+                <th>Name</th>
+                <th>Speciality</th>
+                <th>Age</th>
+                <th>Gender</th>
+                <th>Nationality</th>
+            </tr>
+            <tr>
+                <td>Name</td>
+                <td>Speciality</td>
+                <td>Age</td>
+                <td>Gender</td>
+                <td>Nationality</td>
+            </tr>
+            <tr>
+                <td>Name</td>
+                <td>Speciality</td>
+                <td>Age</td>
+                <td>Gender</td>
+                <td>Nationality</td>
+            </tr>
+            <tr>
+                <td>Name</td>
+                <td>Speciality</td>
+                <td>Age</td>
+                <td>Gender</td>
+                <td>Nationality</td>
+            </tr>
+            <tr>
+                <td>Name</td>
+                <td>Speciality</td>
+                <td>Age</td>
+                <td>Gender</td>
+                <td>Nationality</td>
+            </tr>
+        </table>
+        <ul class="statistics_table_controls">
+            <li><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li>...</li>
+            <li><a href="#">Last</a></li>
+        </ul>
+    </section>
+
+    <hr>
+
+    <section id="favourites" class="favourite_teachers">
+        <header class="section_header">
+            <h2>Favourites</h2>
+        </header>
+
+        <div class="scroll_gallery_wrapper">
+            <div class="scroll_gallery">
+                <article class="scroll_gallery_item teacher_card">
+                    <div class="teacher_photo_container">
+                        <img loading="lazy"
+                             src="https://thispersondoesnotexist.com/image"
+                             alt="Teacher photo"
+                             class="profile_picture">
+                    </div>
+                    <p class="teacher_name">Ihor Tkachuk</p>
+                    <p class="country">Ukraine</p>
+                </article>
+                <article class="scroll_gallery_item teacher_card">
+                    <div class="teacher_photo_container">
+                        <img loading="lazy"
+                             src="https://thispersondoesnotexist.com/image"
+                             alt="Teacher photo"
+                             class="profile_picture">
+                    </div>
+                    <p class="teacher_name">Pragg Rameshababu</p>
+                    <p class="country">India</p>
+                </article>
+                <article class="scroll_gallery_item teacher_card">
+                    <div class="teacher_photo_container">
+                        <img loading="lazy"
+                             src="https://thispersondoesnotexist.com/image"
+                             alt="Teacher photo"
+                             class="profile_picture">
+                    </div>
+                    <p class="teacher_name">Floor Jansen</p>
+                    <p class="country">Denmark</p>
+                </article>
+                <article class="scroll_gallery_item teacher_card">
+                    <div class="teacher_photo_container">
+                        <img loading="lazy"
+                             src="https://thispersondoesnotexist.com/image"
+                             alt="Teacher photo"
+                             class="profile_picture">
+                    </div>
+                    <p class="teacher_name">John Burke</p>
+                    <p class="country">Belgium</p>
+                </article>
+                <article class="scroll_gallery_item teacher_card">
+                    <div class="teacher_photo_container">
+                        <img loading="lazy"
+                             src="https://thispersondoesnotexist.com/image"
+                             alt="Teacher photo"
+                             class="profile_picture">
+                    </div>
+                    <p class="teacher_name">Ari Tang</p>
+                    <p class="country">China</p>
+                </article>
+                <article class="scroll_gallery_item teacher_card">
+                    <div class="teacher_photo_container">
+                        <img loading="lazy"
+                             src="https://thispersondoesnotexist.com/image"
+                             alt="Teacher photo"
+                             class="profile_picture">
+                    </div>
+                    <p class="teacher_name">Rachel Andrew</p>
+                    <p class="country">UK</p>
+                </article>
+                <article class="scroll_gallery_item teacher_card">
+                    <div class="teacher_photo_container">
+                        <img loading="lazy"
+                             src="https://thispersondoesnotexist.com/image"
+                             alt="Teacher photo"
+                             class="profile_picture">
+                    </div>
+                    <p class="teacher_name">Anna Muzychuk</p>
+                    <p class="country">Belarus</p>
+                </article>
+                <article class="scroll_gallery_item teacher_card">
+                    <div class="teacher_photo_container">
+                        <img loading="lazy"
+                             src="https://thispersondoesnotexist.com/image"
+                             alt="Teacher photo"
+                             class="profile_picture">
+                    </div>
+                    <p class="teacher_name">Radoslaw Ljuboevic</p>
+                    <p class="country">Poland</p>
+                </article>
+            </div>
+
+            <span class="scroll_gallery_control control_left">⟨</span>
+            <span class="scroll_gallery_control control_right">⟩</span>
+        </div>
+
+
+    </section>
+
+    <hr>
+
+    <footer class="main_footer">
+        <div class="legal">
+            <p id="about">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A adipisci blanditiis consectetur
+                dolor eum
+                facilis illum iure, labore molestias, necessitatibus numquam obcaecati quaerat voluptatibus. Animi
+                deserunt dignissimos perferendis qui voluptatum.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, sint.</p>
+            <p class="copy">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem, eligendi, quibusdam!</p>
+        </div>
+
+        <nav class="main_nav">
+            <ul>
+                <li><a href="#teachers">Teachers</a></li>
+                <li><a href="#statistics">Statistics</a></li>
+                <li><a href="#favourites">Favorites</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+
+            <button class="add_teacher_button" type="button">Add teacher</button>
+        </nav>
+    </footer>
+
+    <div class="popup_container hidden add_teacher_popup" id="add_teacher_popup">
+        <div class="popup_content">
+            <header class="popup_header">
+                <h2>Add teacher</h2>
+
+                <button class="close_popup">
+                    ✕
+                </button>
+            </header>
+
+            <div class="popup_inner_content">
+                <form action="/" id="new_teacher_form" class="popup_content new_teacher_form">
+                    <label>
+                        Name
+                        <input type="text" name="full_name" required>
+                    </label>
+
+                    <label>
+                        Speciality
+                        <select required>
+                            <option>
+                                Mathematics
+                            </option>
+                        </select>
+                    </label>
+
+                    <div class="form_fields_blocks">
+                        <label>
+                            Country
+                            <select name="country">
+                                <option>
+                                    Ukraine
+                                </option>
+                            </select>
+                        </label>
+
+                        <label>
+                            City
+                            <input type="text" name="city" required>
+                        </label>
+
+                        <label>
+                            Email
+                            <input type="email" name="email" required>
+                        </label>
+
+                        <label>
+                            Phone
+                            <input type="tel" name="phone">
+                        </label>
+
+                        <label>
+                            Date of birth
+                            <input type="date" name="date_of_birth" required>
+                        </label>
+                    </div>
+
+                    <div class="radio_button_group">
+                        <span>Sex</span>
+                        <label for="sex_selector_male">Male</label>
+                        <input type="radio" name="sex" id="sex_selector_male" value="male">
+                        <label for="sex_selector_female">Female</label>
+                        <input type="radio" name="sex" id="sex_selector_female" value="female">
+                    </div>
+
+                    <label>
+                        Background color
+                        <input type="color" name="preferred_bg_color">
+                    </label>
+
+                    <label>
+                        Notes (optional)
+                        <textarea name="comment" rows="4"></textarea>
+                    </label>
+
+                    <button class="add_teacher_button">Add</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="popup_container hidden teacher_info_popup" id="teacher_info_popup">
+        <div class="popup_content">
+            <header class="popup_header">
+                <h2>Teacher Info</h2>
+
+                <button class="close_popup">
+                    ✕
+                </button>
+            </header>
+
+            <div class="popup_inner_content">
+                <div class="upper_content_row">
+                    <img src="https://thispersondoesnotexist.com/image" alt="{Teacher name} photo"
+                         class="teacher_profile">
+                    <div class="teacher_summary">
+                        <h2 class="teacher_name">{Teacher name}</h2>
+                        <p class="speciality">{Teacher speciality}</p>
+                        <p class="age_sex_container"><span class="age">{age}</span>, <span class="sex">{sex}</span></p>
+                        <p class="teacher_email"><a href="mailto:{email}" class="email">{email@gmail.com}</a>
+                        <p class="teacher_phone"><a href="tel:{tel}" class="phone">{(+380) 999999999}</a></p>
+                    </div>
+                </div>
+                <p class="notes">{Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad adipisci alias aliquam
+                    consequuntur error esse harum incidunt ipsum itaque laborum modi molestiae natus, non numquam
+                    pariatur quia quidem rerum sed sit tempora voluptas voluptates voluptatibus? Aut temporibus ut
+                    velit. A asperiores consectetur dolor eligendi est fugit nam nisi quaerat similique?}</p>
+
+                <details class="toggle_teacher_map">
+                    <summary>Toggle map</summary>
+
+                    <iframe class="embedded_map"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2540.1916277046616!2d30.524878015094966!3d50.456156194835756!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4ce4f6f9f69f9%3A0x220fd187954af85!2z0J_QsNC8J9GP0YLQvdC40Log0JLQvtC70L7QtNC40LzQuNGA0YMg0JLQtdC70LjQutC-0LzRgw!5e0!3m2!1suk!2suk!4v1666400056038!5m2!1suk!2suk"
+                            style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </details>
+            </div>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>

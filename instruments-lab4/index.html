@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Teachinder</title>
+
+    <link rel="stylesheet" href="css/default.css">
+    <script src="js/index.js"
+            type="module"
+            defer>
+    </script>
+</head>
+<body>
+<div class="wrapper">
+    <header class="main_header">
+        <div class="top_row">
+            <h1 class="logo">Teachinder</h1>
+            <form class="search_form" action="/" id="search">
+                <label for="search_field"></label>
+                <input type="search" class="search_field" id="search_field"
+                       placeholder="Name, note, or age">
+                <button class="search_button">
+                    Search
+                </button>
+            </form>
+        </div>
+
+        <nav class="main_nav">
+            <ul>
+                <li><a href="#teachers">Teachers</a></li>
+                <li><a href="#statistics">Statistics</a></li>
+                <li><a href="#favourites">Favorites</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+
+            <button class="add_teacher_button" type="button">Add teacher</button>
+        </nav>
+    </header>
+
+    <hr>
+
+    <section id="teachers" class="top_teachers">
+        <header class="section_header">
+            <h2>Top Teachers</h2>
+        </header>
+
+        <ul class="filters">
+            <li class="filter">
+                <label for="age_selector">Age</label>
+                <select id="age_selector" name="age">
+                    <option value="any">Any</option>
+                    <option value="age_18_31">18-31</option>
+                    <option value="age_32_45">32-45</option>
+                    <option value="age_46_64">46-64</option>
+                    <option value="age_65">65 and older</option>
+                </select>
+            </li>
+            <li class="filter">
+                <label for="region_selector">Region</label>
+                <select id="region_selector" name="region">
+                    <option value="any">Any</option>
+                    <option value="eu">Europe</option>
+                    <option value="na">North and Central America</option>
+                    <option value="sa">South America</option>
+                    <option value="as">Asia</option>
+                    <option value="af">Africa</option>
+                    <option value="oc">Australia and Oceania</option>
+                </select>
+            </li>
+            <li class="filter">
+                <label for="sex_selector">Sex</label>
+                <select id="sex_selector" name="gender">
+                    <option value="any">Any</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+            </li>
+            <li class="filter">
+                <label>
+                    <input type="checkbox" name="with_photos">
+                    <span>With photos</span>
+                </label>
+            </li>
+            <li class="filter">
+                <label>
+                    <input type="checkbox" name="only_favorites">
+                    Only favorites
+                </label>
+            </li>
+        </ul>
+
+        <div class="teachers">
+            <!--<article class="teacher_card">
+                <div class="teacher_photo_container">
+                    <img loading="lazy"
+                         src="https://thispersondoesnotexist.com/image"
+                         alt="Teacher photo"
+                         class="profile_picture">
+                </div>
+                <p class="teacher_name">Ihor Tkachuk</p>
+                <p class="specialization">Chemistry</p>
+                <p class="country">Ukraine</p>
+            </article>-->
+        </div>
+    </section>
+
+    <hr>
+
+    <section id="statistics" class="teacher_statistics">
+        <header class="section_header">
+            <h2>Statistics</h2>
+        </header>
+
+        <table class="statistics">
+            <tr>
+                <th data-sort_id="sort_by_name" class="sorting_by ascending">Name</th>
+                <th data-sort_id="sort_by_course">Speciality</th>
+                <th data-sort_id="sort_by_age">Age</th>
+                <th data-sort_id="sort_by_country">Country</th>
+                <th data-sort_id="sort_by_birthday">Birthday</th>
+            </tr>
+            <tr>
+                <td>Name</td>
+                <td>Speciality</td>
+                <td>Age</td>
+                <td>Gender</td>
+                <td>Nationality</td>
+            </tr>
+            <tr>
+                <td>Name</td>
+                <td>Speciality</td>
+                <td>Age</td>
+                <td>Gender</td>
+                <td>Nationality</td>
+            </tr>
+            <tr>
+                <td>Name</td>
+                <td>Speciality</td>
+                <td>Age</td>
+                <td>Gender</td>
+                <td>Nationality</td>
+            </tr>
+            <tr>
+                <td>Name</td>
+                <td>Speciality</td>
+                <td>Age</td>
+                <td>Gender</td>
+                <td>Nationality</td>
+            </tr>
+        </table>
+        <ul class="statistics_table_controls">
+            <li><a href="#" class="first">«</a></li>
+            <li><a href="#" class="prev">‹</a></li>
+            <li class="curr_page">1</li>
+            <li><a href="#" class="next">›</a></li>
+            <li><a href="#" class="last">»</a></li>
+        </ul>
+    </section>
+
+    <hr>
+
+    <section id="favourites" class="favorite_teachers">
+        <header class="section_header">
+            <h2>Favourites</h2>
+        </header>
+
+        <div class="scroll_gallery_wrapper">
+            <div class="scroll_gallery favorite_teachers">
+                <!--<article class="scroll_gallery_item teacher_card">
+                    <div class="teacher_photo_container">
+                        <img loading="lazy"
+                             src="https://thispersondoesnotexist.com/image"
+                             alt="Teacher photo"
+                             class="profile_picture">
+                    </div>
+                    <p class="teacher_name">Ihor Tkachuk</p>
+                    <p class="country">Ukraine</p>
+                </article>-->
+            </div>
+
+            <span class="scroll_gallery_control control_left">⟨</span>
+            <span class="scroll_gallery_control control_right">⟩</span>
+        </div>
+
+
+    </section>
+
+    <hr>
+
+    <footer class="main_footer">
+        <div class="legal">
+            <p id="about">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A adipisci blanditiis consectetur
+                dolor eum
+                facilis illum iure, labore molestias, necessitatibus numquam obcaecati quaerat voluptatibus. Animi
+                deserunt dignissimos perferendis qui voluptatum.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, sint.</p>
+            <p class="copy">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem, eligendi, quibusdam!</p>
+        </div>
+
+        <nav class="main_nav">
+            <ul>
+                <li><a href="#teachers">Teachers</a></li>
+                <li><a href="#statistics">Statistics</a></li>
+                <li><a href="#favourites">Favorites</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+
+            <button class="add_teacher_button" type="button">Add teacher</button>
+        </nav>
+    </footer>
+
+    <div class="popup_container hidden add_teacher_popup" id="add_teacher_popup">
+        <div class="popup_content">
+            <header class="popup_header">
+                <h2>Add teacher</h2>
+
+                <button class="close_popup">
+                    ✕
+                </button>
+            </header>
+
+            <div class="popup_inner_content">
+                <form action="/" id="new_teacher_form" class="popup_content new_teacher_form">
+                    <label>
+                        Full name
+                        <input type="text" pattern="([A-Z][A-Za-z]+ ?){2,}" name="full_name" required>
+                    </label>
+
+                    <label>
+                        Speciality
+                        <select name="course" required>
+                            <option>
+                                Mathematics
+                            </option>
+                        </select>
+                    </label>
+
+                    <div class="form_fields_blocks">
+                        <label>
+                            Country
+                            <select name="country">
+                                <option>
+                                    Ukraine
+                                </option>
+                            </select>
+                        </label>
+
+                        <label>
+                            City
+                            <input type="text" name="city" required>
+                        </label>
+
+                        <label>
+                            Email
+                            <input type="email" name="email" required>
+                        </label>
+
+                        <label>
+                            Phone
+                            <input type="tel" name="phone">
+                        </label>
+
+                        <label>
+                            Date of birth
+                            <input type="date" name="b_date" required>
+                        </label>
+                    </div>
+
+                    <div class="radio_button_group">
+                        <span>Sex</span>
+                        <label for="male">Male</label>
+                        <input type="radio" name="gender" id="male" value="male" checked>
+                        <label for="female">Female</label>
+                        <input type="radio" name="gender" id="female" value="female">
+                    </div>
+
+                    <label>
+                        Background color
+                        <input type="color" name="bg_color">
+                    </label>
+
+                    <label>
+                        Notes (optional)
+                        <textarea name="note" rows="4"></textarea>
+                    </label>
+
+                    <button class="add_teacher_button" type="submit">Add</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="popup_container teacher_info_popup hidden" id="teacher_info_popup">
+        <div class="popup_content">
+            <header class="popup_header">
+                <h2>Teacher Info</h2>
+
+                <button class="close_popup">
+                    ✕
+                </button>
+            </header>
+
+            <div class="popup_inner_content">
+                <div class="upper_content_row">
+                    <img src="https://thispersondoesnotexist.com/image" alt="{Teacher name} photo"
+                         class="teacher_profile">
+                    <div class="teacher_summary">
+                        <div class="name_row">
+                            <h2 class="teacher_name">{Teacher name}</h2>
+                            <span class="fav_star">☆</span>
+                        </div>
+                        <p class="speciality">{Teacher speciality}</p>
+                        <p class="age_sex_container"><span class="age">{age}</span>, <span class="sex">{sex}</span></p>
+                        <p class="teacher_email"><a href="mailto:{email}" class="email">{email@gmail.com}</a>
+                        <p class="teacher_phone"><a href="tel:{tel}" class="phone">{(+380) 999999999}</a></p>
+                    </div>
+                </div>
+                <p class="notes">{Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad adipisci alias aliquam
+                    consequuntur error esse harum incidunt ipsum itaque laborum modi molestiae natus, non numquam
+                    pariatur quia quidem rerum sed sit tempora voluptas voluptates voluptatibus? Aut temporibus ut
+                    velit. A asperiores consectetur dolor eligendi est fugit nam nisi quaerat similique?}</p>
+
+                <details class="toggle_teacher_map">
+                    <summary>Toggle map</summary>
+
+                    <iframe class="embedded_map"
+                            src="https://maps.google.com/maps?q='+YOUR_LAT+','+YOUR_LON+'&hl=es&z=14&amp;output=embed"
+                            allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </details>
+            </div>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>

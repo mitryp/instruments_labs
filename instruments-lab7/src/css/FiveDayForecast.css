@@ -1,0 +1,120 @@
+.forecast {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  gap: 1em;
+}
+.forecast > article.day_forecast {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  max-width: 20vw;
+  padding: 1rem;
+  border: 1px solid #3333;
+  border-radius: 1rem;
+  position: relative;
+  backdrop-filter: blur(10px);
+  background-color: #fff4;
+}
+@media screen and (min-width: 2048px) {
+  .forecast > article.day_forecast {
+    max-width: 15vw;
+  }
+}
+.forecast > article.day_forecast > h2 {
+  text-wrap: avoid;
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+}
+.forecast > article.day_forecast > .hours {
+  overflow: scroll;
+  display: flex;
+  column-gap: 0.5rem;
+  width: 100%;
+}
+.forecast > article.day_forecast > .hours .weather_name {
+  margin-bottom: 0.5em;
+}
+.forecast > article.day_forecast > .hours h3 {
+  margin: 0;
+}
+.forecast > article.day_forecast > .hours:has(:only-child) {
+  justify-content: center;
+}
+.forecast > article.day_forecast > .hours::-webkit-scrollbar {
+  display: none;
+}
+.forecast > article.day_forecast > .hours > .date_card {
+  display: flex;
+  flex-direction: column;
+  text-wrap: normal;
+  align-items: center;
+}
+.forecast > article.day_forecast > .hours > .date_card > img {
+  width: 50px;
+  aspect-ratio: 1;
+}
+.forecast > article.day_forecast:not(:has(.date_card:only-child))::before,
+.forecast > article.day_forecast:not(:has(.date_card:only-child))::after {
+  position: absolute;
+  top: calc(50% - 0.5em);
+  font-size: 2em;
+  opacity: 0;
+  color: #ea6e4c;
+  transform: skewY(2);
+}
+.forecast > article.day_forecast:not(:has(.date_card:only-child))::before {
+  content: '⟨';
+  left: 0;
+  animation: left_arrow_shaking 8s infinite ease-in-out;
+}
+.forecast > article.day_forecast:not(:has(.date_card:only-child))::after {
+  content: '⟩';
+  right: 0;
+  animation: right_arrow_shaking 8s infinite ease-in-out;
+}
+@media screen and (max-width: 768px) {
+  .forecast {
+    flex-direction: column;
+    width: 100% !important;
+  }
+  .forecast article.day_forecast {
+    max-width: 100%;
+    width: 100%;
+  }
+}
+@keyframes left_arrow_shaking {
+  0% {
+    left: 0;
+  }
+  85% {
+    left: 0;
+    opacity: 0;
+  }
+  96.6% {
+    left: 0.2em;
+    opacity: 1;
+  }
+  100% {
+    left: 0;
+    opacity: 0;
+  }
+}
+@keyframes right_arrow_shaking {
+  0% {
+    right: 0;
+  }
+  85% {
+    right: 0;
+    opacity: 0;
+  }
+  96.6% {
+    right: 0.2em;
+    opacity: 1;
+  }
+  100% {
+    right: 0;
+    opacity: 0;
+  }
+}
+/*# sourceMappingURL=FiveDayForecast.css.map */

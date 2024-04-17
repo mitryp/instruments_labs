@@ -1,0 +1,144 @@
+@import "shared";
+
+.forecast {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  gap: 1em;
+
+  > article.day_forecast {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    max-width: 20vw;
+    padding: 1rem;
+    border: 1px solid #3333;
+    border-radius: 1rem;
+    position: relative;
+    backdrop-filter: blur(10px);
+    background-color: #fff4;
+
+    @media screen and (min-width: 2048px) {
+      max-width: 15vw;
+    }
+
+    > h2 {
+      text-wrap: avoid;
+      margin-top: 0;
+      margin-bottom: .75rem;
+    }
+
+    > .hours {
+      overflow: scroll;
+      display: flex;
+      column-gap: .5rem;
+      width: 100%;
+
+      .weather_name {
+        margin-bottom: .5em;
+      }
+
+      h3 {
+        margin: 0;
+      }
+
+      &:has(:only-child) {
+        justify-content: center;
+      }
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+
+      > .date_card {
+        display: flex;
+        flex-direction: column;
+        text-wrap: normal;
+        align-items: center;
+
+        > img {
+          width: 50px;
+          aspect-ratio: 1;
+        }
+      }
+    }
+
+    &:not(:has(.date_card:only-child)) {
+      &::before, &::after {
+        position: absolute;
+        top: calc(50% - .5em);
+        font-size: 2em;
+        opacity: 0;
+        color: @accent_color;
+        transform: skewY(2);
+      }
+
+      &::before {
+        content: '⟨';
+        left: 0;
+
+        animation: left_arrow_shaking 8s infinite ease-in-out;
+      }
+
+      &::after {
+        content: '⟩';
+        right: 0;
+
+        animation: right_arrow_shaking 8s infinite ease-in-out;
+      }
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    width: 100% !important;
+
+    article.day_forecast {
+      max-width: 100%;
+      width: 100%;
+    }
+  }
+
+}
+
+@keyframes left_arrow_shaking {
+  0% {
+    left: 0;
+  }
+
+  85% {
+    left: 0;
+    opacity: 0;
+  }
+
+  96.6% {
+    left: .2em;
+    opacity: 1;
+  }
+
+  100% {
+    left: 0;
+    opacity: 0;
+  }
+}
+
+@keyframes right_arrow_shaking {
+  0% {
+    right: 0;
+  }
+
+  85% {
+    right: 0;
+    opacity: 0;
+  }
+
+  96.6% {
+    right: .2em;
+    opacity: 1;
+  }
+
+  100% {
+    right: 0;
+    opacity: 0;
+  }
+}
